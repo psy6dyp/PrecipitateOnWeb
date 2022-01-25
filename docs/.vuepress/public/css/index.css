@@ -1,0 +1,7 @@
+.home .hero img {
+  border-radius: 50%;
+  max-width: 25%!important;
+}
+.home .hero {
+  text-align: center;
+}
