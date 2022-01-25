@@ -1,3 +1,4 @@
+const moment = require('moment')
 module.exports = {
   title: '沉淀在网页',
   base: '/PrecipitateOnWeb/',
@@ -6,8 +7,19 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'stylesheet', href: '/css/index.css' }]
   ],
+  plugins: [
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp) => {
+          moment.locale('zh-cn') // 中文时间
+          return moment(timestamp).format('lll')
+        }
+      }
+    ]
+  ],
   themeConfig: {
-    lastUpdated: 'Last Updated', // string | boolean
+    lastUpdated: '最近更新', // string | boolean
     nav: [
       { text: '首页', link: '/' },
       
@@ -22,6 +34,9 @@ module.exports = {
     ],
     displayAllHeaders: false,
     sidebarDepth: 1,
+    markdown: {
+      lineNumbers: true
+    },
     sidebar: {
       '/FrontEnd/HTML/': [
 
@@ -59,8 +74,5 @@ module.exports = {
         // 'Best_Practices ', //第二十八章 最佳实践
       ]
     }
-  },
-  markdown: {
-    lineNumbers: true
   }
 }
