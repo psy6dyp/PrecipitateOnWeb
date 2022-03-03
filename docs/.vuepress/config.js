@@ -7,6 +7,9 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'stylesheet', href: '/css/index.css' }]
   ],
+  theme: 'yuu',
+  themeConfig: {
+  },
   plugins: [
     [
       '@vuepress/last-updated',
@@ -30,7 +33,8 @@ module.exports = {
           { text: 'JavaScript', link: '/FrontEnd/JavaScript/' }
         ] 
       },
-      { text: 'External', link: 'https://google.com' },
+
+      { text: 'GitHub', link: 'https://github.com/psy6dyp/PrecipitateOnWeb/tree/master/docs/FrontEnd' },
     ],
     displayAllHeaders: false,
     sidebarDepth: 2,
