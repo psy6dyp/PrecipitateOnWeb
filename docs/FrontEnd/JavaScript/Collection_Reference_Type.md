@@ -324,6 +324,31 @@ console.log(a); // [ 10, 5, 3, 2, 1 ]
 ```
 ### 操作方法
 ```js
+//concat
+let colors = ['red', 'green', 'blue'];
+let colors2 = colors.concat('yellow', ['black', 'white']); // 数组默认全部会被打平
+console.log(colors); // [ 'red', 'green', 'blue' ] 不改变原数组
+console.log(colors2); // [ 'red', 'green', 'blue', 'yellow', 'black', 'white' ]
+
+//slice
+let colors = ['red', 'green', 'blue', 'yellow'];
+let colors2 = colors.slice(1); // 从索引 1 到 结束
+let colors3 = colors.slice(1, 3); // 从索引 1 到 3的前一个 也就是 索引 1 与 索引 2
+let colors4 = colors.slice(-3, -1); // colors.slice(1, 3); 数组长度减去负值
+let colors5 = colors.slice(2, 1); // 结束位置比开始小 返回空数组
+console.log(colors); // ['red', 'green', 'blue', 'yellow']
+console.log(colors2); // ['green', 'blue', 'yellow']
+console.log(colors3); // ['green', 'blue']
+console.log(colors4); // ['green', 'blue']
+console.log(colors5); // []
+
+//splice Array方法中的至强 可以删除、替换、插入元素
+let colors = ['red', 'green', 'blue', 'yellow'];
+//删除
+let colors1 = colors.splice(0, 2); // 第一个参数要删除的开始位置，第二个参数是删除个数
+console.log(colors); // ['blue', 'yellow']
+console.log(colors1); // ['red', 'green'] 返回删掉的元素
+
 ```
 ### 搜索和位置方法
 ```js
